@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="AMS.css">
+    <title>Attendance Management System</title>
+    
+</head>
+<body>
+    <div class="sidebar">
+        <div class="profile">
+            <div class="profile-img">
+                <span>
+                    <img src="AMS2.png" style=" width: 60px">
+                </span>
+            </div>
+        </div>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="#" class="nav-link active">
+                    <span class="icon">🏠</span>
+                    <span>Home</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <span class="icon">📅</span>
+                    <span>Schedule</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <span class="icon">👥</span>
+                    <span>Class</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+    <div class="main-content">
+        <div class="header">
+            <div class="header-title">ADMIN ACCOUNT | Dashboard</div>
+            <div class="search-bar">
+                <input type="text" class="search-input" placeholder="Search...">
+                <div class="user-profile" id="profileButton">
+                    <i class ="fas fa-user-circle"></i>
+                </div>
+                <div class="profile-dropdown" id="profileDropdown">
+                    <div class="dropdown-item">Profile</div>
+                    <div class="dropdown-item">Settings</div>
+                    <div class="dropdown-item">Logout</div>
+                </div>
+            </div>
+            <script src="button.js"></script>
+        </div>
+        
+        <div class="container">
+            <div class="school-year">
+                <label for="year">School Year:</label>
+                <select id="year" class="year-selector" onchange="updateDashboard()">
+                    <option value="2023-2024">2023 - 2024</option>
+                    <option value="2022-2023">2022 - 2023</option>
+                    <option value="2021-2022">2021 - 2022</option>
+                </select>
+            </div>
+
+            <div class="cards-container">
+                <div class="card" id="english-card">
+                    <div class="card-title">English</div>
+                    <div class="card-rate">85%</div>
+                    <div class="chart" id="english-chart">
+                     
+                    </div>
+                    <div class="chart-labels" id="english-labels">
+                        
+                    </div>
+                </div>
+
+                <div class="card" id="math-card">
+                    <div class="card-title">Math</div>
+                    <div class="card-rate">80%</div>
+                    <div class="chart" id="math-chart">
+                        
+                    </div>
+                    <div class="chart-labels" id="math-labels">
+                       
+                    </div>
+                </div>
+
+                <div class="card" id="filipino-card">
+                    <div class="card-title">Filipino</div>
+                    <div class="card-rate">85%</div>
+                    <div class="chart" id="filipino-chart">
+                        
+                    </div>
+                    <div class="chart-labels" id="filipino-labels">
+                 
+                    </div>
+                </div>
+            </div>
+
+            <div class="grade-cards">
+                <div class="grade-card">
+                    <div class="grade-title">Grade 10</div>
+                    <div class="grade-rate">95%</div>
+                </div>
+                <div class="grade-card">
+                    <div class="grade-title">Grade 11</div>
+                    <div class="grade-rate">86%</div>
+                </div>
+                <div class="grade-card">
+                    <div class="grade-title">Grade 12</div>
+                    <div class="grade-rate">76%</div>
+                </div>
+            </div>
+
+            <div class="legend">
+                <div class="legend-item">
+                    <div class="legend-color high"></div>
+                    <span>High Attendance</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color medium"></div>
+                    <span>Medium Attendance</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color good"></div>
+                    <span>Good Attendance</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color low"></div>
+                    <span>Low Attendance</span>
+                </div>
+            </div>
+        </div>
+        <script src="AMS.js"></script>
+    </div>
+    
+</body>
+</html>
