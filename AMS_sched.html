@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="AMS_sched.css">
+    <title>Attendance Management System</title>
+   
+</head>
+<body>
+   
+    <div class="sidebar">
+        <div class="profile">
+            <div class="profile-img">
+                <span>
+                    <img src="AMS2.png" style=" width: 60px">
+                </span>
+            </div>
+        </div>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="AMS.html" class="nav-link">
+                    <span class="icon">🏠</span>
+                    <span>Home</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="AMS_sched.html" class="nav-link active">
+                    <span class="icon">📅</span>
+                    <span>Schedule</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <span class="icon">👨‍🏫</span>
+                    <span>Class</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-title">
+                ADMIN ACCOUNT | Schedule
+            </div>
+            <div class="search-container">
+                <input type="text" placeholder="Search..." class="search-input">
+                <div class="user-profile" id="profileButton">
+                    <i class ="fas fa-user-circle"></i>
+                </div>
+                <div class="profile-dropdown" id="profileDropdown">
+                    <div class="dropdown-item">Profile</div>
+                    <div class="dropdown-item">Settings</div>
+                    <div class="dropdown-item">Logout</div>
+                </div>
+            </div>
+            <script src="button.js"></script>
+        </div>
+        
+        <div class="schedule-container">
+            <div class="schedule-content">
+                <div class="schedule-title">Class Schedule</div>
+                <table class="schedule-table">
+                    <thead>
+                        <tr>
+                            <th class="class-column">Class</th>
+                            <th class="subject-column">Subject</th>
+                            <th class="day-column">Day</th>
+                            <th class="time-column">Time</th>
+                            <th class="room-column">Room</th>
+                            <th class="status-column">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Grade 10-Galileo</td>
+                            <td>English</td>
+                            <td>Monday, Wednesday, Friday</td>
+                            <td>8:00 AM - 9:30 AM</td>
+                            <td>Room 1</td>
+                            <td><span class="status-tag status-active">Active</span></td>
+                        </tr>
+                        <tr>
+                            <td>Grade 10-Galileo</td>
+                            <td>Math</td>
+                            <td>Monday, Wednesday, Friday</td>
+                            <td>9:45 AM - 11:15 AM</td>
+                            <td>Room 1</td>
+                            <td><span class="status-tag status-active">Active</span></td>
+                        </tr>
+                        <tr>
+                            <td>Grade 10-Galileo</td>
+                            <td>Filipino</td>
+                            <td>Tuesday, Thursday</td>
+                            <td>8:00 AM - 10:00 AM</td>
+                            <td>Room 1</td>
+                            <td><span class="status-tag status-active">Active</span></td>
+                        </tr>
+                        <tr>
+                            <td>Grade 11-Da Vinci</td>
+                            <td>Physics</td>
+                            <td>Monday, Wednesday</td>
+                            <td>1:00 PM - 3:00 PM</td>
+                            <td>Room 3</td>
+                            <td><span class="status-tag status-active">Active</span></td>
+                        </tr>
+                        <tr>
+                            <td>Grade 11-Da Vinci</td>
+                            <td>Chemistry</td>
+                            <td>Tuesday, Thursday</td>
+                            <td>1:00 PM - 3:00 PM</td>
+                            <td>Room 3</td>
+                            <td><span class="status-tag status-pending">Pending</span></td>
+                        </tr>
+                        <tr>
+                            <td>Grade 12-Franklin</td>
+                            <td>Research</td>
+                            <td>Friday</td>
+                            <td>1:00 PM - 4:00 PM</td>
+                            <td>Room 5</td>
+                            <td><span class="status-tag status-pending">Pending</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <button class="add-schedule-btn">+</button>
+        <script src="AMS_sched.js"></script>
+    </div>
+
+</body>
+</html>

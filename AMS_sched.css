@@ -1,0 +1,267 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f5f5f5;
+}
+
+/* Sidebar Styles */
+ /* Sidebar Styles */
+ .sidebar {
+    width: 120px;
+    background-color: #f5f5f5;
+    border-right: 1px solid #ddd;
+    z-index: 10;
+    position: fixed;
+    height: 100%;
+}
+
+.profile {
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.profile-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.nav-menu {
+    list-style: none;
+}
+
+.nav-item {
+    border-bottom: 1px solid #eee;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    color: #333;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.nav-link.active {
+    background-color: #5a5a5a;
+    color: white;
+}
+
+.nav-link:hover:not(.active) {
+    background-color: #e0e0e0;
+}
+
+.icon {
+    margin-right: 10px;
+}
+
+/* Main Content Styles */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-left: 120px; /* Same as sidebar width */
+    width: calc(100% - 110px);
+}
+
+/* Header Styles */
+.header {
+    background-color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.header-title {
+    font-size: 14px;
+    font-weight: bold;
+    color: #666;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    padding: 8px 15px;
+    border: 1px solid #ddd;
+    border-radius: 50px;
+    width: 200px;
+    font-size: 14px;
+    outline: none;
+    height: 32px;
+}
+
+.user-profile {
+    width: 32px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #8b8989;
+    margin-left: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    background-image: URL(user.png);
+}
+
+.profile-dropdown {
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    background-color: white;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    width: 150px;
+    display: none;
+    z-index: 100;
+}
+
+.profile-dropdown.show {
+    display: block;
+}
+
+.dropdown-item {
+    padding: 12px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.dropdown-item:hover {
+    background-color: #f5f5f5;
+}
+
+
+/* Schedule Content Styles */
+.schedule-container {
+    flex: 1;
+    padding: 20px;
+}
+
+.schedule-content {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    padding: 0;
+    overflow-x: auto;
+}
+
+.schedule-title {
+    padding: 15px 20px;
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+    border-bottom: 1px solid #eee;
+}
+
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.schedule-table th {
+    padding: 12px 15px;
+    text-align: left;
+    color: #555;
+    font-size: 14px;
+    border-bottom: 1px solid #eee;
+    background-color: #f9f9f9;
+    font-weight: normal;
+}
+
+.schedule-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+}
+
+.schedule-table tr:hover {
+    background-color: #f9f9f9;
+}
+
+.class-column {
+    width: 140px;
+}
+
+.subject-column {
+    width: 100px;
+}
+
+.day-column {
+    width: 220px;
+}
+
+.time-column {
+    width: 160px;
+}
+
+.room-column {
+    width: 80px;
+}
+
+.status-column {
+    width: 80px;
+}
+
+.status-tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.status-active {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+
+.status-pending {
+    background-color: #fff8e1;
+    color: #ff8f00;
+}
+
+/* Add Schedule Button */
+.add-schedule-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 48px;
+    height: 48px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    transition: all 0.3s;
+    z-index: 5;
+}
+
+.add-schedule-btn:hover {
+    background-color: #388E3C;
+    transform: scale(1.05);
+}
