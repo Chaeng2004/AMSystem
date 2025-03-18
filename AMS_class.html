@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="AMS_class.css">
+    <title>Attendance Management System</title>
+   
+</head>
+<body>
+     <div class="sidebar">
+        <div class="profile">
+            <div class="profile-img">
+                <span>
+                    <img src="AMS2.png" style=" width: 60px">
+                </span>
+            </div>
+        </div>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="AMS.html" class="nav-link">
+                    <span class="icon">🏠</span>
+                    <span>Home</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="AMS_sched.html" class="nav-link">
+                    <span class="icon">📅</span>
+                    <span>Schedule</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link active">
+                    <span class="icon">👨‍🏫</span>
+                    <span>Class</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <div class="header">
+            <div class="header-title">
+                ADMIN ACCOUNT | Class
+            </div>
+            <div class="search-container">
+                <input type="text" placeholder="Search..." class="search-input">
+                <div class="user-profile" id="profileButton">
+                    <i class ="fas fa-user-circle"></i>
+                </div>
+                <div class="profile-dropdown" id="profileDropdown">
+                    <div class="dropdown-item">Profile</div>
+                    <div class="dropdown-item">Settings</div>
+                    <div class="dropdown-item">Logout</div>
+                </div>
+            </div>
+            <script src="button.js"></script>
+        </div>
+        
+        <div class="content">
+            <h2 class="page-title">Class Attendance</h2>
+            
+            <div class="attendance-controls">
+                <select class="class-selector" id="classSelector">
+                    <option value="grade10-galileo-english">Grade 10-Galileo (English)</option>
+                    <option value="grade10-galileo-math">Grade 10-Galileo (Math)</option>
+                    <option value="grade10-galileo-filipino">Grade 10-Galileo (Filipino)</option>
+                    <option value="grade11-davinci-physics">Grade 11-Da Vinci (Physics)</option>
+                    <option value="grade11-davinci-chemistry">Grade 11-Da Vinci (Chemistry)</option>
+                    <option value="grade12-franklin-research">Grade 12-Franklin (Research)</option>
+                </select>
+                <input type="date" class="date-selector" id="dateSelector" value="2025-03-19">
+            </div>
+            
+            <div class="summary-cards">
+                <div class="summary-card">
+                    <div class="summary-title">Present</div>
+                    <div class="summary-value present" id="presentCount">0</div>
+                </div>
+                <div class="summary-card">
+                    <div class="summary-title">Absent</div>
+                    <div class="summary-value absent" id="absentCount">0</div>
+                </div>
+                <div class="summary-card">
+                    <div class="summary-title">Excused</div>
+                    <div class="summary-value excused" id="excusedCount">0</div>
+                </div>
+                <div class="summary-card">
+                    <div class="summary-title">Total Students</div>
+                    <div class="summary-value" id="totalCount">0</div>
+                </div>
+            </div>
+            
+            <table class="attendance-table">
+                <thead>
+                    <tr>
+                        <th>Student ID</th>
+                        <th>Name</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="attendanceTableBody">
+
+                </tbody>
+            </table>
+            
+            <button class="save-btn" id="saveButton">+</button
+        </div>
+        <script src="AMS_class.js"></script>
+    </div>
+
+</body>
+</html>
