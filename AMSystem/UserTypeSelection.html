@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select User Type</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container user-selection-page">
+        <!-- Top navigation -->
+        <div class="header">
+            <div class="header-item active">AMS</div>
+            <div class="separator">|</div>
+            <div class="header-item">Select User</div>
+        </div>
+        
+        <!-- Colorful bar at top -->
+        <div class="color-bar">
+            <div class="color-segment"></div>
+            <div class="color-segment"></div>
+            <div class="color-segment"></div>
+            <div class="color-segment"></div>
+            <div class="color-segment"></div>
+        </div>
+        
+        <!-- Main content area -->
+        <div class="main-content">
+            <h1 class="title">Select User Type</h1>
+            <p class="subtitle">You can change your account at any time</p>
+            
+            <div class="user-types">
+                <div class="user-type-card" id="admin-card">
+                    <div class="icon admin-icon"></div>
+                    <h2>ADMIN</h2>
+                    <p>Manage the system and attendance records.</p>
+                </div>
+                
+                <div class="user-type-card" id="students-card">
+                    <div class="icon students-icon"></div>
+                    <h2>STUDENTS</h2>
+                    <p>View your attendance records and reports.</p>
+                </div>
+            </div>
+            
+            <button class="next-button" disabled>NEXT</button>
+        </div>
+        
+        <!-- Bottom color bar -->
+        <div class="bottom-color-bar">
+            <div class="color-segment"></div>
+            <div class="color-segment"></div>
+            <div class="color-segment"></div>
+            <div class="color-segment"></div>
+        </div>
+    </div>
+
+    <script>
+        // Animation for page loading
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('.main-content').classList.add('show');
+            
+            // Get elements
+            const adminCard = document.getElementById('admin-card');
+            const studentsCard = document.getElementById('students-card');
+            const nextButton = document.querySelector('.next-button');
+            
+            // Handle user type selection
+            adminCard.addEventListener('click', function() {
+                adminCard.classList.add('selected');
+                studentsCard.classList.remove('selected');
+                nextButton.removeAttribute('disabled');
+                // Store selection
+                localStorage.setItem('userType', 'admin');
+            });
+            
+            studentsCard.addEventListener('click', function() {
+                studentsCard.classList.add('selected');
+                adminCard.classList.remove('selected');
+                nextButton.removeAttribute('disabled');
+                // Store selection
+                localStorage.setItem('userType', 'student');
+            });
+            
+            // Handle next button click
+            nextButton.addEventListener('click', function() {
+                const userType = localStorage.getItem('userType');
+                if (userType === 'student') {
+                    window.location.href = 'Studentlogin.html';
+                } else if (userType === 'admin') {
+                    // You can create an admin login page and link to it here
+                    window.location.href = 'admin-login.html';
+                    // For now, we'll just redirect to student login
+                    // window.location.href = 'student-login.html';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

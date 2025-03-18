@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Login - AMS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container login-page">
+        <!-- Top navigation -->
+        <div class="header">
+            <div class="header-item active">AMS</div>
+            <div class="separator">|</div>
+            <div class="header-item">Student</div>
+        </div>
+
+        <!-- Colorful bar at top -->
+        <div class="color-bar">
+            <div class="color-segment"></div>
+            <div class="color-segment"></div>
+            <div class="color-segment"></div>
+            <div class="color-segment"></div>
+            <div class="color-segment"></div>
+        </div>
+
+        <!-- Main content area -->
+        <div class="main-content">
+            <h1 class="title">Student Login</h1>
+            <p class="subtitle">Please enter your credentials to access your account</p>
+
+            <div class="login-form">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" class="form-input" placeholder="Enter your email address">
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" class="form-input" placeholder="Enter your password">
+                </div>
+                    <!-- Use the <a> tag with the same styles -->
+                    <a href="StudentHomePage.html" class="login-button">LOG IN</a>
+
+                <!-- Change this line in Studentlogin.html -->
+                <p class="signup-link">New user? <a href="StudentRegistration.html">Create an account</a></p>
+            </div>
+        </div>
+
+        <!-- Bottom color bar -->
+        <div class="bottom-color-bar">
+            <div class="color-segment"></div>
+            <div class="color-segment"></div>
+            <div class="color-segment"></div>
+            <div class="color-segment"></div>
+        </div>
+    </div>
+
+    <script>
+        // Animation for page transition
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('.main-content').classList.add('show');
+        });
+    </script>
+</body>
+
+</html>

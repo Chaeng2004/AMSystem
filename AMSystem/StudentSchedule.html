@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Schedule - AMS</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="schedule.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap">
+</head>
+<body>
+    <div class="container schedule-page">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo-container">
+                <div class="logo">
+                    <img src="AMS2.png" class="logo-image">
+                </div>
+            </div>
+
+            <div class="sidebar-menu">
+                <a href="StudentHomePage.html" class="menu-item">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="StudentAttendancePage.html" class="menu-item">
+                    <i class="fas fa-calendar-check"></i>
+                    <span>Attendance</span>
+                </a>
+                <a href="StudentSchedule.html" class="menu-item active">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Schedule</span>
+                </a>
+                <a href="StudentTeacher.html" class="menu-item">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <span>Teacher</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Main content area -->
+        <div class="main-area">
+            <!-- Top navigation -->
+            <div class="top-nav">
+                <div class="page-title">STUDENT ACCOUNT | Schedule Page</div>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search...">
+                </div>
+                <div class="user-profile" id="profileButton">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+
+                <!-- Profile dropdown -->
+                <div class="profile-dropdown" id="profileDropdown">
+                    <div class="dropdown-item">Profile</div>
+                    <div class="dropdown-item">Settings</div>
+                    <div class="dropdown-item">Logout</div>
+                </div>
+            </div>
+
+            <!-- Content sections -->
+            <div class="content-area">
+                <!-- Week selector -->
+                <div class="week-selector">
+                    <button class="week-nav-btn"><i class="fas fa-chevron-left"></i></button>
+                    <div class="current-week">March 18 - 22, 2025</div>
+                    <button class="week-nav-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+
+                <!-- Schedule grid -->
+                <div class="schedule-grid">
+                    <!-- Time column -->
+                    <div class="time-column">
+                        <div class="time-header">Time</div>
+                        <div class="time-slot">7:30 - 8:30</div>
+                        <div class="time-slot">8:30 - 9:30</div>
+                        <div class="time-slot">9:30 - 9:45</div>
+                        <div class="time-slot">9:45 - 10:45</div>
+                        <div class="time-slot">10:45 - 11:45</div>
+                        <div class="time-slot">11:45 - 12:45</div>
+                        <div class="time-slot">12:45 - 1:45</div>
+                        <div class="time-slot">1:45 - 2:45</div>
+                        <div class="time-slot">2:45 - 3:00</div>
+                        <div class="time-slot">3:00 - 4:00</div>
+                    </div>
+
+                    <!-- Monday column -->
+                    <div class="day-column">
+                        <div class="day-header">Monday</div>
+                        <div class="subject-block mathematics" style="grid-row: span 2;">
+                            <div class="subject-name">Mathematics 9</div>
+                            <div class="subject-room">Room 301</div>
+                            <div class="subject-teacher">Mrs. Santos</div>
+                        </div>
+                        <div class="break-block">Morning Break</div>
+                        <!-- Removed other subjects -->
+                    </div>
+
+                    <!-- Tuesday column -->
+                    <div class="day-column">
+                        <div class="day-header">Tuesday</div>
+                        <!-- Removed other subjects -->
+                        <div class="subject-block mathematics" style="grid-row: span 2;">
+                            <div class="subject-name">Mathematics 9</div>
+                            <div class="subject-room">Room 301</div>
+                            <div class="subject-teacher">Mrs. Santos</div>
+                        </div>
+                    </div>
+
+                    <!-- Wednesday column -->
+                    <div class="day-column">
+                        <div class="day-header">Wednesday</div>
+                        <!-- Removed other subjects -->
+                        <div class="subject-block mathematics" style="grid-row: span 2;">
+                            <div class="subject-name">Mathematics 9</div>
+                            <div class="subject-room">Room 301</div>
+                            <div class="subject-teacher">Mrs. Santos</div>
+                        </div>
+                    </div>
+
+                    <!-- Thursday column -->
+                    <div class="day-column">
+                        <div class="day-header">Thursday</div>
+                        <!-- Removed other subjects -->
+                        <div class="subject-block mathematics" style="grid-row: span 2;">
+                            <div class="subject-name">Mathematics 9</div>
+                            <div class="subject-room">Room 301</div>
+                            <div class="subject-teacher">Mrs. Santos</div>
+                        </div>
+                         <!-- Removed other subjects -->
+                    </div>
+
+                    <!-- Friday column -->
+                    <div class="day-column">
+                        <div class="day-header">Friday</div>
+                         <!-- Removed other subjects -->
+                        <div class="subject-block mathematics" style="grid-row: span 2;">
+                            <div class="subject-name">Mathematics 9</div>
+                            <div class="subject-room">Room 301</div>
+                            <div class="subject-teacher">Mrs. Santos</div>
+                        </div>
+                         <!-- Removed other subjects -->
+                    </div>
+                </div>
+
+                <!-- Legend -->
+                <div class="schedule-legend">
+                    <div class="legend-title">Legend:</div>
+                    <div class="legend-items">
+                        <div class="legend-item">
+                            <div class="legend-color mathematics"></div>
+                            <div class="legend-label">Mathematics</div>
+                        </div>
+                        <!-- Removed other subjects -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Animation for page transition
+        document.addEventListener('DOMContentLoaded', function() {
+            // Profile dropdown toggle
+            const profileButton = document.getElementById('profileButton');
+            const profileDropdown = document.getElementById('profileDropdown');
+
+            profileButton.addEventListener('click', function() {
+                profileDropdown.classList.toggle('show');
+            });
+
+            // Close the dropdown when clicking outside
+            window.addEventListener('click', function(event) {
+                if (!event.target.matches('.user-profile') && !event.target.matches('.fa-user-circle')) {
+                    if (profileDropdown.classList.contains('show')) {
+                        profileDropdown.classList.remove('show');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

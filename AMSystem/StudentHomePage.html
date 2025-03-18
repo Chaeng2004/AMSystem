@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Home - AMS</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap">
+</head>
+<body>
+    <div class="container home-page">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo-container">
+                <div class="logo">
+                    <img src="AMS2.png" class="logo-image">
+                </div>
+            </div>
+
+            <div class="sidebar-menu">
+                <a href="StudentHomePage.html" class="menu-item active">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="StudentAttendancePage.html" class="menu-item">
+                    <i class="fas fa-calendar-check"></i>
+                    <span>Attendance</span>
+                </a>
+                <a href="StudentSchedule.html" class="menu-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Schedule</span>
+                </a>
+                <a href="StudentTeacher.html" class="menu-item">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <span>Teacher</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Main content area -->
+        <div class="main-area">
+            <!-- Top navigation -->
+            <div class="top-nav">
+                <div class="page-title">STUDENT ACCOUNT | Home Page</div>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search...">
+                </div>
+                <div class="user-profile" id="profileButton">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+
+                <!-- Profile dropdown -->
+                <div class="profile-dropdown" id="profileDropdown">
+                    <div class="dropdown-item">Profile</div>
+                    <div class="dropdown-item">Settings</div>
+                    <div class="dropdown-item">Logout</div>
+                </div>
+            </div>
+
+            <!-- Content sections -->
+            <div class="content-area">
+                <!-- Schedule section in a dedicated container -->
+                <div class="schedule-container">
+                    <fieldset class="schedule-fieldset">
+                        <legend>Today's Schedule</legend>
+                        <div class="schedule-content">
+                            <div class="schedule-item">
+                                <div class="schedule-time">07:30 - 09:00</div>
+                                <div class="schedule-details">
+                                    <div class="schedule-subject">Mathematics 9</div>
+                                    <div class="schedule-room">Room 301</div>
+                                    <div class="schedule-teacher">Mrs. Santos</div>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+
+                <!-- Attendance section - larger and positioned lower -->
+                <div class="content-section attendance-section">
+                    <h2>Attendance Summary</h2>
+                    <div class="attendance-content">
+                        <!-- Show attendance for Mathematics class -->
+                        <div class="attendance-item">
+                            <div class="subject-name">Mathematics 9</div>
+                            <div class="attendance-bar-container">
+                                <div class="attendance-bar" style="width: 92%"></div>
+                            </div>
+                            <div class="attendance-percentage">92%</div>
+                        </div>
+
+                        <!-- Add class button for joining more classes -->
+                        <div class="add-button" id="joinClassButton">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Join Class Modal -->
+    <div class="modal" id="joinClassModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Join Class</h2>
+            </div>
+            <div class="modal-body">
+                <div class="class-code-section">
+                    <div class="class-code-header">
+                        <h3>Class code</h3>
+                        <p>Ask your teacher for the class code, then enter it here.</p>
+                    </div>
+                    <input type="text" placeholder="Class code" class="class-code-input">
+                </div>
+                <div class="instructions">
+                    <p>To sign in with a class code</p>
+                    <ul>
+                        <li>Use an authorized account</li>
+                        <li>Use a class code with 5-7 letters or numbers, and no spaces or symbols</li>
+                    </ul>
+                </div>
+                <div class="modal-actions">
+                    <button class="cancel-button">Cancel</button>
+                    <button class="join-button">Join</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Animation for page transition
+        document.addEventListener('DOMContentLoaded', function() {
+            // Profile dropdown toggle
+            const profileButton = document.getElementById('profileButton');
+            const profileDropdown = document.getElementById('profileDropdown');
+
+            profileButton.addEventListener('click', function() {
+                profileDropdown.classList.toggle('show');
+            });
+
+            // Close the dropdown when clicking outside
+            window.addEventListener('click', function(event) {
+                if (!event.target.matches('.user-profile') && !event.target.matches('.fa-user-circle')) {
+                    if (profileDropdown.classList.contains('show')) {
+                        profileDropdown.classList.remove('show');
+                    }
+                }
+            });
+
+            // Join Class modal functionality
+            const joinClassButton = document.getElementById('joinClassButton');
+            const joinClassModal = document.getElementById('joinClassModal');
+            const cancelButton = document.querySelector('.cancel-button');
+
+            joinClassButton.addEventListener('click', function() {
+                joinClassModal.classList.add('show');
+            });
+
+            cancelButton.addEventListener('click', function() {
+                joinClassModal.classList.remove('show');
+            });
+
+            // Close modal when clicking outside
+            window.addEventListener('click', function(event) {
+                if (event.target === joinClassModal) {
+                    joinClassModal.classList.remove('show');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
