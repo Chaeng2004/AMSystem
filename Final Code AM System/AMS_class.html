@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="AMS_class.css">
+    <title>Attendance Management System</title>
+</head>
+<body>
+    <div class="overlay" id="overlay"></div>
+    <div class="toast" id="toast"></div>
+    <div class="sidebar" id="sidebar">
+        <div class="logo">
+            <img src="AMS2.png" alt="AMS Logo">
+        </div>
+        <div class="nav-items">
+            <a href="AMS1.html" class="nav-item">
+                <span>🏠</span>
+                Home
+            </a>
+            <a href="AMS_sched.html" class="nav-item">
+                <span>📅</span>
+                Schedule
+            </a>
+            <a href="AMS_class.html" class="nav-item active">
+                <span>📚</span>
+                Class
+            </a>
+        </div>
+    </div>
+    
+    <div class="main-content">
+        <div class="top-bar">
+            <div style="display: flex; align-items: center;">
+                <div class="menu-toggle" id="menu-toggle">☰</div>
+                <div class="admin-info">ADMIN ACCOUNT | Class</div>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search...">
+                <div class="user-profile-container">
+                    <div class="user-profile" style="cursor: pointer" id="profileButton">
+                        <i class ="fas fa-user-circle"></i>
+                    </div>
+                    <div class="profile-dropdown" id="profileDropdown">
+                        <div class="dropdown-item">Profile</div>
+                        <div class="dropdown-item">Settings</div>
+                        <div class="dropdown-item">Logout</div>
+                    </div>
+                </div>
+            </div>
+            <script src="button.js"></script>
+        </div>
+        
+        <div class="content">
+            <div class="attendance-header">Class Attendance</div>
+            
+            <div class="controls">
+                <select class="class-select">
+                    <option>Grade 10-Galileo (English)</option>
+                    <option>Grade 11-Da Vinci (English)</option>
+                    <option>Grade 12-Franklin (English)</option>
+                </select>
+                
+                <div class="date-container">
+                    <input type="date" class="date-select" id="date-select">
+                </div>
+            </div>
+            
+            <div class="summary-cards">
+                <div class="card">
+                    <div class="card-title">Present</div>
+                    <div class="card-value present" id="present-count">5</div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">Absent</div>
+                    <div class="card-value absent" id="absent-count">0</div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">Excused</div>
+                    <div class="card-value excused" id="excused-count">0</div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">Total Students</div>
+                    <div class="card-value" id="total-count">5</div>
+                </div>
+            </div>
+            
+            <div class="attendance-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Student ID</th>
+                            <th>Name</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2025-0001</td>
+                            <td>Student 1</td>
+                            <td>
+                                <div class="radio-group">
+                                    <label class="radio-option">
+                                        <input type="radio" name="status-1" value="present" checked>
+                                        Present
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="status-1" value="absent">
+                                        Absent
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="status-1" value="excused">
+                                        Excused
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2025-0002</td>
+                            <td>Student 2</td>
+                            <td>
+                                <div class="radio-group">
+                                    <label class="radio-option">
+                                        <input type="radio" name="status-2" value="present" checked>
+                                        Present
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="status-2" value="absent">
+                                        Absent
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="status-2" value="excused">
+                                        Excused
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2025-0003</td>
+                            <td>Student 3</td>
+                            <td>
+                                <div class="radio-group">
+                                    <label class="radio-option">
+                                        <input type="radio" name="status-3" value="present" checked>
+                                        Present
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="status-3" value="absent">
+                                        Absent
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="status-3" value="excused">
+                                        Excused
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2025-0004</td>
+                            <td>Student 4</td>
+                            <td>
+                                <div class="radio-group">
+                                    <label class="radio-option">
+                                        <input type="radio" name="status-4" value="present" checked>
+                                        Present
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="status-4" value="absent">
+                                        Absent
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="status-4" value="excused">
+                                        Excused
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2025-0005</td>
+                            <td>Student 5</td>
+                            <td>
+                                <div class="radio-group">
+                                    <label class="radio-option">
+                                        <input type="radio" name="status-5" value="present" checked>
+                                        Present
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="status-5" value="absent">
+                                        Absent
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="status-5" value="excused">
+                                        Excused
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <div class="add-button">+</div>
+    <script src="AMS_class.js"></script>
+ 
+</body>
+</html>

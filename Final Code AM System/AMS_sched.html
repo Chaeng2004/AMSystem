@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="AMS_sched.css">
+    <title>Attendance Management System</title>
+</head>
+<body>
+    <div class="overlay" id="overlay"></div>
+    <div class="toast" id="toast"></div>
+    <div class="sidebar" id="sidebar">
+        <div class="logo">
+            <img src="AMS2.png" alt="AMS Logo">
+        </div>
+        <div class="nav-items">
+            <a href="AMS1.html" class="nav-item">
+                <span>🏠</span>
+                Home
+            </a>
+            <a href="AMS_sched.html" class="nav-item active">
+                <span>📅</span>
+                Schedule
+            </a>
+            <a href="AMS_class.html" class="nav-item">
+                <span>📚</span>
+                Class
+            </a>
+        </div>
+    </div>
+    
+    <div class="main-content">
+        <div class="top-bar">
+            <div style="display: flex; align-items: center;">
+                <div class="menu-toggle" id="menu-toggle">☰</div>
+                <div class="admin-info">ADMIN ACCOUNT | Schedule</div>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search...">
+                <div class="user-profile-container">
+                    <div class="user-profile" style="cursor: pointer" id="profileButton">
+                        <i class ="fas fa-user-circle"></i>
+                    </div>
+                    <div class="profile-dropdown" id="profileDropdown">
+                        <div class="dropdown-item">Profile</div>
+                        <div class="dropdown-item">Settings</div>
+                        <div class="dropdown-item">Logout</div>
+                    </div>
+                </div>
+            </div>
+            <script src="button.js"></script>
+        </div>
+
+        <div class="content">
+            <div class="schedule-section">
+                <h2 class="schedule-title">Class Schedule</h2>
+                <div class="table-container">
+                    <table class="schedule-table">
+                        <thead>
+                            <tr>
+                                <th>Class</th>
+                                <th>Subject</th>
+                                <th>Day</th>
+                                <th>Time</th>
+                                <th>Room</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="scheduleTableBody">
+                            <!-- Table content will be added dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="add-button">+</div>
+
+    </div>
+    
+    <script src="AMS_sched.js"></script>
+</body>
+</html>
